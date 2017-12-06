@@ -1,7 +1,6 @@
 
 export const generatePrimeNumbers = (amount) => {
-  if(amount === 0) return []
-  if(amount === 1) return [2]
+  if(amount <= 0) return []
 
   let primeNumbers = [2]
   let num = 3
