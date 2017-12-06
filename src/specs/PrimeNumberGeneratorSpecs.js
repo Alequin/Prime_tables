@@ -8,4 +8,10 @@ describe("Prime number generator", function(){
     let result = generatePrimeNumbers(1)
     assert.deepEqual(result, expected)
   })
+
+  it("Can generate zero prime numbers", () => {
+    let expected = []
+    let result = generatePrimeNumbers(0)
+    assert.deepEqual(result, expected)
+  })
 })
