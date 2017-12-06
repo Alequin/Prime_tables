@@ -1,0 +1,22 @@
+{
+  "name": "prime_tables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/App.js",
+    "test": "mocha --require babel-register --require babel-polyfill --recursive ./src/specs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "mocha": "^4.0.1"
+  }
+}

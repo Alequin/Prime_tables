@@ -1,0 +1,7 @@
+alias run="npm start"
+alias tst="npm test"
+
+alias clear-project-aliases="unalias run tst"
+
+echo "Project aliases have being loaded"
+echo "Project aliases loaded"
