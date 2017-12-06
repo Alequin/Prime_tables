@@ -1,4 +1,4 @@
 
 export const generatePrimeNumbers = (amount) => {
-  return [2]
+  if(amount === 1) return [2]
 }
