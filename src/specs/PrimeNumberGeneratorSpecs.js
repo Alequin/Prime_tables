@@ -21,4 +21,10 @@ describe("Prime number generator", function(){
     assert.deepEqual(result, expected)
   })
 
+  it("Can generate two prime number", () => {
+    let expected = [2, 3, 5, 7]
+    let result = generatePrimeNumbers(4)
+    assert.deepEqual(result, expected)
+  })
+
 })
