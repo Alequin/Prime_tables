@@ -1,4 +1,5 @@
 import React from "react";
+import Nav from "./../nav"
 
 class MainPage extends React.Component{
 
@@ -9,10 +10,10 @@ class MainPage extends React.Component{
   render(){
     return (
       <div>
-        Main Page
+        <Nav />
       </div>
     )
   }
 }
 
-export default MainPage;
+export default MainPage
