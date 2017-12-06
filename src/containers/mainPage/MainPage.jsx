@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import Nav from "./../nav"
 
 class MainPage extends React.Component{

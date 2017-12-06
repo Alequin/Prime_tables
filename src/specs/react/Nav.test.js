@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './../../components/nav/Nav.jsx';
+import Nav from './../../containers/nav/Nav.jsx';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
