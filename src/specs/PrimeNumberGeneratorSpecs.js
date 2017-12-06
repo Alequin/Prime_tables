@@ -121,4 +121,26 @@ describe(`igeneratePrimeMultiplicationTable - generates a multiplication
     let result = generatePrimeMultiplicationTable(5)
     assert.deepEqual(result, expected)
   })
+
+  it("can generate a 2d array for 100 prime numbers", () => {
+    let expected = 101
+    let result = generatePrimeMultiplicationTable(100).length
+    assert.deepEqual(result, expected)
+
+    expected = 101
+    result = generatePrimeMultiplicationTable(100)[0].length
+    assert.deepEqual(result, expected)
+
+    expected = 2*2
+    result = generatePrimeMultiplicationTable(100)[1][1]
+    assert.deepEqual(result, expected)
+
+    expected = 29*29
+    result = generatePrimeMultiplicationTable(100)[10][10]
+    assert.deepEqual(result, expected)
+
+    expected = 541*541
+    result = generatePrimeMultiplicationTable(100)[100][100]
+    assert.deepEqual(result, expected)
+  })
 })
