@@ -20,6 +20,8 @@ export const generatePrimeNumbers = (amount) => {
 }
 
 export const isNumberPrime = (number, previousPrimeNumbers) => {
+  if(number === 2 || number === 3) return true
+
   const smallestValueToCheck = Math.sqrt(number)
   for(let primeNum of previousPrimeNumbers){
     if(number % primeNum === 0 || primeNum > smallestValueToCheck){

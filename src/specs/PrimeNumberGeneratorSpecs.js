@@ -7,8 +7,16 @@ import {
 describe(`isNumberPrime - checks if a number if prime using
   all previous prime numbers`, function(){
 
-  it("will return true when numbe to check is two", () => {
+  it("will return true when number to check is 2", () => {
     assert.ok(isNumberPrime(2, []))
+  })
+
+  it("will return true when number to check is 3", () => {
+    assert.ok(isNumberPrime(3, [2]))
+  })
+
+  it("will return false when number to check is 4", () => {
+    assert.ok(!isNumberPrime(4, [2]))
   })
 
 })
