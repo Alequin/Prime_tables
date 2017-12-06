@@ -1,9 +1,10 @@
 alias run="npm start"
 alias tst="npm test"
+alias tst-u="npm test -- -u"
 alias bld="npm run build"
 alias open="open ./build/index.html"
 
-alias clear-project-aliases="unalias run tst bld open"
+alias clear-project-aliases="unalias run tst tst-u bld open"
 
 echo "Project aliases have being loaded"
 echo "Project aliases loaded"

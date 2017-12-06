@@ -4,7 +4,6 @@ class MainPage extends React.Component{
 
   constructor(props){
     super(props)
-    console.log(this.render());
   }
 
   render(){

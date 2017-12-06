@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node src/App.js",
     "build": "webpack -w",
-    "test": "mocha --require babel-register --require babel-polyfill --recursive ./src/specs",
-    "jest-test": "jest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +19,6 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "jest": "^21.2.1",
-    "mocha": "^4.0.1",
     "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.0",
     "webpack": "^2.2.0"
