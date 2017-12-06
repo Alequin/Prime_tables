@@ -2,9 +2,24 @@
   position: fixed;
   background-color: #228B22;
   width: 100%;
+  padding: 20px;
 
   h2{
+    text-align: center;
     color: white;
+    margin: 0 0 15px 0;
+  }
+
+  .input{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .button{
+    margin-top: 15px;
+  }
+
+  .align-center-container{
     text-align: center;
   }
 }
