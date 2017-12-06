@@ -5,10 +5,15 @@ class Nav extends React.Component{
 
   constructor(props){
     super(props)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
     this.onChangeInputBox = this.onChangeInputBox.bind(this)
     this.state = {
       inputText: ""
     }
+  }
+
+  handleButtonClick(){
+    this.props.onClickButton(this.state.inputText)
   }
 
   onChangeInputBox(event){
@@ -36,7 +41,7 @@ class Nav extends React.Component{
             className="button"
             type="submit"
             value="Generate prime number multiplication table"
-            onClick={this.props.onClickButton}
+            onClick={this.handleButtonClick}
           />
         </div>
       </nav>
