@@ -1,4 +1,9 @@
 
+export const generatePrimeMultiplicationTable = () => {
+  return [[" ", 2],
+  [ 2 , 4]]
+}
+
 export const generatePrimeNumbers = (amount) => {
   if(amount <= 0) return []
 

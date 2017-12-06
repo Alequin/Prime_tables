@@ -2,6 +2,7 @@ import assert from "assert"
 import {
   generatePrimeNumbers,
   isNumberPrime,
+  generatePrimeMultiplicationTable,
 } from "./../PrimeNumberGenerator.js"
 
 describe(`isNumberPrime - checks if a number if prime using
@@ -94,4 +95,17 @@ describe("generatePrimeNumbers - creates an array of prime numbers", function(){
     assert.strictEqual(result, expected)
   })
 
+})
+
+describe(`igeneratePrimeMultiplicationTable - generates a multiplication
+  table (represents by a 2d array) using the max prime number asked for`, function(){
+
+  it("can generate a 2d array for 1 prime number", () => {
+    let expected = [
+      [" ", 2],
+      [ 2 , 4],
+    ]
+    let result = generatePrimeMultiplicationTable(1)
+    assert.deepEqual(result, expected)
+  })
 })
