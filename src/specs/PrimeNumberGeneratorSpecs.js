@@ -5,7 +5,7 @@ import {
 } from "./../PrimeNumberGenerator.js"
 
 describe(`isNumberPrime - checks if a number if prime using
-  all previous prime numbers`, function(){
+  previous prime numbers`, function(){
 
   it("will return true when number to check is 2", () => {
     assert.ok(isNumberPrime(2, []))
@@ -19,6 +19,17 @@ describe(`isNumberPrime - checks if a number if prime using
     assert.ok(!isNumberPrime(4, [2]))
   })
 
+  it("will return false when number to check is 10", () => {
+    assert.ok(!isNumberPrime(10, [2,3,5,7]))
+  })
+
+  it("will return false when number to check is 18", () => {
+    assert.ok(!isNumberPrime(18, [2, 3, 5, 7, 11, 13, 17]))
+  })
+
+  it("will return true when number to check is 97", () => {
+    assert.ok(isNumberPrime(97, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]))
+  })
 })
 
 describe("generatePrimeNumbers - creates an array of prime numbers", function(){
