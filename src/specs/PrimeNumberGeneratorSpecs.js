@@ -1,7 +1,19 @@
 import assert from "assert"
-import { generatePrimeNumbers } from "./../PrimeNumberGenerator.js"
+import {
+  generatePrimeNumbers,
+  isNumberPrime,
+} from "./../PrimeNumberGenerator.js"
 
-describe("Prime number generator", function(){
+describe(`isNumberPrime - checks if a number if prime using
+  all previous prime numbers`, function(){
+
+  it("will return true when numbe to check is two", () => {
+    assert.ok(isNumberPrime(2, []))
+  })
+
+})
+
+describe("generatePrimeNumbers - creates an array of prime numbers", function(){
 
   it("Can generate zero prime numbers", () => {
     let expected = []
