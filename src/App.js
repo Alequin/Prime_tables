@@ -1,7 +1,5 @@
-class Test{
-  constructor(){
-    this.speak = "hello world"
-  }
-}
+import React from 'react'
+import { render } from 'react-dom'
+import MainPage from "./components/MainPage.jsx"
 
-console.log(new Test().speak)
+render(<MainPage/>, document.getElementById('react-root'))
