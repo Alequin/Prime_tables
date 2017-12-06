@@ -8,6 +8,7 @@ export const generatePrimeNumbers = (amount) => {
   while(primeNumbers.length < amount){
     let isCurrentPrime = true;
     for(let primeNum of primeNumbers){
+      if(primeNum > Math.sqrt(num)) break
       if(num % primeNum === 0){
         isCurrentPrime = false
         break
