@@ -10,13 +10,14 @@ class Table extends React.Component{
     this.maxColumns = 22
     this.setEventListeners()
     this.state = {
-      x: 0,
-      y: 0
+      row: 0,
+      column: 0
     }
   }
 
   setEventListeners(){
     document.addEventListener("keydown", (event) => {
+      const key = event.key
       switch(event.key){
         case "ArrowUp":
           this.onPressUp()
@@ -35,35 +36,35 @@ class Table extends React.Component{
   }
 
   onPressUp(){
-    if(this.state.x > 0){
-      this.setState({x: this.state.x-1})
+    if(this.state.row > 0){
+      this.setState({row: this.state.row-1})
     }
   }
 
   onPressDown(){
-    if(this.state.x+this.maxRows < this.props.tableBuilder.maxPosition){
-      this.setState({x: this.state.x+1})
+    if(this.state.row+this.maxRows < this.props.tableBuilder.maxPosition){
+      this.setState({row: this.state.row+1})
     }
   }
 
   onPressLeft(){
-    if(this.state.y > 0){
-      this.setState({y: this.state.y-1})
+    if(this.state.column > 0){
+      this.setState({column: this.state.column-1})
     }
   }
 
   onPressRight(){
-    if(this.state.y+this.maxColumns < this.props.tableBuilder.maxPosition){
-      this.setState({y: this.state.y+1})
+    if(this.state.column+this.maxColumns < this.props.tableBuilder.maxPosition){
+      this.setState({column: this.state.column+1})
     }
   }
 
   buildRow(tableBuilder, rowIndex){
     const row = []
-    let length = tableBuilder.maxPosition+this.state.y
-    if(length > this.maxColumns) length = this.maxColumns+this.state.y
+    let length = tableBuilder.maxPosition+this.state.column
+    if(length > this.maxColumns) length = this.maxColumns+this.state.column
 
-    for(let column=this.state.y; column<length; column++){
+    for(let column=this.state.column; column<length; column++){
       const cellValue = tableBuilder.valueAt(rowIndex, column)
       const info = tableBuilder.infoAt(rowIndex, column)
       row.push(<Cell key={cellValue} value={cellValue} info={info}/>)
@@ -73,9 +74,9 @@ class Table extends React.Component{
 
   buildTable(){
     const table = []
-    let length = this.props.tableBuilder.maxPosition+this.state.x
-    if(length > this.maxRows) length = this.maxRows+this.state.x
-    for(let row=this.state.x; row<length; row++){
+    let length = this.props.tableBuilder.maxPosition+this.state.row
+    if(length > this.maxRows) length = this.maxRows+this.state.row
+    for(let row=this.state.row; row<length; row++){
       table.push(this.buildRow(this.props.tableBuilder, row))
     }
     return table
