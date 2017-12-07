@@ -28,7 +28,7 @@ class Table extends React.Component{
   render(){
     return (
       <section className="table-container">
-
+        {this.buildTable()}
       </section>
     )
   }

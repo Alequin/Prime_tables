@@ -7,10 +7,15 @@ class MainPage extends React.Component{
   constructor(props){
     super(props)
     this.onClickGenerateButton = this.onClickGenerateButton.bind(this)
+    this.state = {
+      primeNumberCount: 3
+    }
   }
 
   onClickGenerateButton(inputText){
-    console.log(inputText);
+    this.setState({
+      primeNumberCount: parseInt(inputText)
+    })
   }
 
   render(){
@@ -18,7 +23,7 @@ class MainPage extends React.Component{
       <div className="main-page">
         <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
-          <Table/>
+          <Table primeNumberCount={this.state.primeNumberCount}/>
         </section>
       </div>
     )
