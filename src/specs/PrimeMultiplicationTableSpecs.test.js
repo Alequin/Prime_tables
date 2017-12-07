@@ -37,4 +37,10 @@ describe("test", function(){
     let result = primeTable.valueAt(0,0)
     assert.strictEqual(result, expected)
   })
+
+  it("can get value at position (5,5)", () => {
+    let expected = 121
+    let result = primeTable.valueAt(5,5)
+    assert.strictEqual(result, expected)
+  })
 })
