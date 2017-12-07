@@ -8,7 +8,8 @@ class PrimeMultiplicationTable{
     if(x === 0 && y === 0) return "_"
     if(x === 0) return this.primeNumbers[y-1]
     if(y === 0) return this.primeNumbers[x-1]
-    return this.primeNumbers[x-1] * this.primeNumbers[y-1]
+    const result = this.primeNumbers[x-1] * this.primeNumbers[y-1]
+    return !result ? "_" : result
   }
 
   infoAt(x,y){
