@@ -70,16 +70,6 @@ describe("test", function(){
     let result = primeTable.infoAt(0,0)
     assert.strictEqual(result, expected)
   })
-})
-
-describe(`isNumberPrime - checks if a number if prime using
-  previous prime numbers`, function(){
-
-  let primeTable
-
-  beforeEach(() => {
-    primeTable = new PrimeMultiplicationTable(5)
-  })
 
   it("will return true when number to check is 2", () => {
     assert.ok(primeTable.isNumberPrime(2, []))
@@ -103,15 +93,6 @@ describe(`isNumberPrime - checks if a number if prime using
 
   it("will return true when number to check is 97", () => {
     assert.ok(primeTable.isNumberPrime(97, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]))
-  })
-})
-
-describe("generatePrimeNumbers - creates an array of prime numbers", function(){
-
-  let primeTable
-
-  beforeEach(() => {
-    primeTable = new PrimeMultiplicationTable(5)
   })
 
   it("Can generate zero prime numbers", () => {
