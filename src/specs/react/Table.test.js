@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from './../../components/table/Table.jsx'
 import Cell from './../../components/table/cell/Cell.jsx'
+import PrimeMultiplicationTable from "./../../PrimeMultiplicationTable"
 import renderer from 'react-test-renderer'
 import assert from "assert"
 
@@ -17,6 +18,21 @@ describe("Table component", function(){
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("can generate row", () => {
+    let table = new Table({primeNumberCount: 2})
+    let primeTable = new PrimeMultiplicationTable(2)
+
+    let expected = (
+      <div key={0} className="row">
+        <Cell key={"_"} value={"_"}/>
+        <Cell key={2} value={2}/>
+        <Cell key={3} value={3}/>
+      </div>
+    )
+    let result = table.buildRow(primeTable, 0)
+    assert.deepEqual(result, expected)
+  })
 
   it("can generate table", () => {
     let table = new Table({primeNumberCount: 2})
@@ -42,4 +58,6 @@ describe("Table component", function(){
     let result = table.buildTable()
     assert.deepEqual(result, expected)
   })
+
+
 })
