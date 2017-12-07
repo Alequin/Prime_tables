@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  className="main-page"
+>
   <nav
     className="nav-bar"
   >
@@ -31,5 +33,12 @@ exports[`renders correctly 1`] = `
       />
     </div>
   </nav>
+  <section
+    className="content-container"
+  >
+    <section
+      className="table-container"
+    />
+  </section>
 </div>
 `;
