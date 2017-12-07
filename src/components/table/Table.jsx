@@ -37,7 +37,7 @@ class Table extends React.Component{
 }
 
 Table.propTypes = {
-  primeNumberCount: PropTypes.number,
+  tableBuilder: PropTypes.object,
 }
 
 export default Table
