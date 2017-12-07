@@ -77,6 +77,12 @@ describe("test", function(){
     assert.strictEqual(result, expected)
   })
 
+  it("getting the info of an empty position will return an empty string", () => {
+    let expected = ""
+    let result = primeTable.infoAt(6,6)
+    assert.strictEqual(result, expected)
+  })
+
   it("will return true when number to check is 2", () => {
     assert.ok(primeTable.isNumberPrime(2, []))
   })
