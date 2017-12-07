@@ -13,7 +13,7 @@ describe("Table component", function(){
 
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Table/>)
+      .create(<Table primeNumberCount={5}/>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
