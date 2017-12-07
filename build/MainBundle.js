@@ -1665,7 +1665,7 @@ var Nav = function (_React$Component) {
             _react2.default.createElement(
               "h2",
               null,
-              "Enter how many prime numbers you wish to generate"
+              "How many prime numbers would you like to generate?"
             ),
             _react2.default.createElement(
               "div",

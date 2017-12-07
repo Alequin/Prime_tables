@@ -37,7 +37,7 @@ class Nav extends React.Component{
       <nav className="nav-bar">
         <form>
           <label>
-            <h2>Enter how many prime numbers you wish to generate</h2>
+            <h2>How many prime numbers would you like to generate?</h2>
             <div className="align-center-container">
               <input
                 className="input"

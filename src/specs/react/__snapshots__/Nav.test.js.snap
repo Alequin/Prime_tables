@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
   <form>
     <label>
       <h2>
-        Enter how many prime numbers you wish to generate
+        How many prime numbers would you like to generate?
       </h2>
       <div
         className="align-center-container"
