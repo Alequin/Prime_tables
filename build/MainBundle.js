@@ -20101,8 +20101,8 @@ var PrimeMultiplicationTable = function () {
     key: "infoAt",
     value: function infoAt(x, y) {
       if (x === 0 && y === 0) return "This is not a number";
-      if (x === 0) return "This is the prime number " + this.primeNumbers[y - 1];
-      if (y === 0) return "This is the prime number " + this.primeNumbers[x - 1];
+      if (x === 0) return "This is prime number " + y;
+      if (y === 0) return "This is prime number " + x;
       return "This is the product of " + this.primeNumbers[x - 1] + " x " + this.primeNumbers[y - 1];
     }
   }, {

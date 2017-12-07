@@ -20,6 +20,12 @@ The page is available at https://alequin.github.io/prime_tables/. It can also be
 
 * The table will be refreshed using the provided value.
 
+* If the table is to large for the screen it will become scrollable.
+
+* Each table cell may be clicked.
+  * Clicking on a prime number will display it position
+  * Clicking on any of the products will display the two values used to produced it.
+
 ## Aliases
 
 To activate a few aliases for commonly run terminal commands run **source project_aliases.txt** in the terminal. This will only work in the terminal they are activate in.
