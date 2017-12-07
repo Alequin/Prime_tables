@@ -7,10 +7,12 @@
 
 #Aliases
 
-To activate a few aliases for commonly run terminal commands enter the command source project_aliases.txt
+To activate a few aliases for commonly run terminal commands enter the source project_aliases.txt
 
 This will activate the aliases:
-* run / npm start
-* tst / npm test
+* run: Open app in default browser
+* tst: Run all tests
+* tst-u: Run all tests and update snapshots
+* bld: run webpack to build bundle
 
 All project aliases can be removed using the command **clear-project-aliases**

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/App.js",
+    "start": "open ./build/index.html",
     "build": "webpack -w",
     "test": "jest"
   },
