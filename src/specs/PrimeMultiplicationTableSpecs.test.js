@@ -16,12 +16,6 @@ describe("test", function(){
     assert.strictEqual(result, expected)
   })
 
-  it("can get info at position (1,1)", () => {
-    let expected = "This is the product of 2 x 2"
-    let result = primeTable.infoAt(1,1)
-    assert.strictEqual(result, expected)
-  })
-
   it("can get value at position (1,1) on table", () => {
     let expected = 4
     let result = primeTable.valueAt(1,1)
@@ -56,10 +50,19 @@ describe("test", function(){
     })
   })
 
-  it("can get info at position (0,0)", () => {
-    assert.throws(() => {
-      new PrimeMultiplicationTable(1.5)
-    })
+  it("can get info at position (1,1)", () => {
+    let expected = "This is the product of 2 x 2"
+    let result = primeTable.infoAt(1,1)
+    assert.strictEqual(result, expected)
+  })
+
+  it("can get info at position (0,1) and (1,0)", () => {
+    let expected = "This is the prime number 2"
+
+    let result = primeTable.infoAt(0,1)
+    assert.strictEqual(result, expected)
+    result = primeTable.infoAt(1,2)
+    assert.strictEqual(result, expected)
   })
 })
 
