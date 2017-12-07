@@ -7,32 +7,34 @@ exports[`renders correctly 1`] = `
   <nav
     className="nav-bar"
   >
-    <label>
-      <h2>
-        Enter how many prime numbers you wish to generate
-      </h2>
+    <form>
+      <label>
+        <h2>
+          Enter how many prime numbers you wish to generate
+        </h2>
+        <div
+          className="align-center-container"
+        >
+          <input
+            className="input"
+            onChange={[Function]}
+            step=".01"
+            type="number"
+            value=""
+          />
+        </div>
+      </label>
       <div
         className="align-center-container"
       >
         <input
-          className="input"
-          onChange={[Function]}
-          step=".01"
-          type="number"
-          value="3"
+          className="button"
+          onClick={[Function]}
+          type="submit"
+          value="Generate prime number multiplication table"
         />
       </div>
-    </label>
-    <div
-      className="align-center-container"
-    >
-      <input
-        className="button"
-        onClick={[Function]}
-        type="submit"
-        value="Generate prime number multiplication table"
-      />
-    </div>
+    </form>
   </nav>
   <section
     className="content-container"
