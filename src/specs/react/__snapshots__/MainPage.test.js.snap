@@ -1,3 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `<div />`;
+exports[`renders correctly 1`] = `
+<div>
+  <nav
+    className="nav-bar"
+  >
+    <label>
+      <h2>
+        Enter how many prime numbers you wish to generate
+      </h2>
+      <div
+        className="align-center-container"
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          type="number"
+          value=""
+        />
+      </div>
+    </label>
+    <div
+      className="align-center-container"
+    >
+      <input
+        className="button"
+        onClick={[Function]}
+        type="submit"
+        value="Generate prime number multiplication table"
+      />
+    </div>
+  </nav>
+</div>
+`;
