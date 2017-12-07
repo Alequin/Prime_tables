@@ -1,6 +1,7 @@
 import React from "react"
 import Nav from "./../nav/Nav.jsx"
 import Table from "./../../components/table/Table.jsx"
+import PrimeMultiplicationTable from "./../../PrimeMultiplicationTable.js"
 
 class MainPage extends React.Component{
 
@@ -8,13 +9,13 @@ class MainPage extends React.Component{
     super(props)
     this.onClickGenerateButton = this.onClickGenerateButton.bind(this)
     this.state = {
-      primeNumberCount: 3
+      primeTable: new PrimeMultiplicationTable(3)
     }
   }
 
   onClickGenerateButton(inputText){
     this.setState({
-      primeNumberCount: parseInt(inputText)
+      primeTable: new PrimeMultiplicationTable(parseInt(inputText))
     })
   }
 
@@ -23,7 +24,7 @@ class MainPage extends React.Component{
       <div className="main-page">
         <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
-          <Table primeNumberCount={this.state.primeNumberCount}/>
+          <Table tableBuilder={this.state.primeTable}/>
         </section>
       </div>
     )
