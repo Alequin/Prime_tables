@@ -20108,6 +20108,7 @@ var PrimeMultiplicationTable = function () {
   }, {
     key: "generatePrimeNumbers",
     value: function generatePrimeNumbers(amount) {
+      var time1 = new Date().getTime();
       if (amount % 1 !== 0) throw new Error("Amount must be a whole number. Currently: " + amount);
       if (amount <= 0) return [];
 
@@ -20119,14 +20120,18 @@ var PrimeMultiplicationTable = function () {
         }
         num++;
       }
+      var time2 = new Date().getTime();
+      console.log(time2 - time1);
       return primeNumbers;
     }
   }, {
     key: "isNumberPrime",
     value: function isNumberPrime(number, priorPrimeNumbers) {
-      if (number === 2 || number === 3) return true;
+      if (number === 2 || number === 3 || number === 5) return true;
 
-      var index = 0;
+      if (number % 2 === 0 || number % 3 === 0 || number % 5 === 0) return false;
+
+      var index = 3;
       var smallestValueToCheck = Math.sqrt(number);
       while (priorPrimeNumbers[index] <= smallestValueToCheck) {
         if (number % priorPrimeNumbers[index++] === 0) return false;

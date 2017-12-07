@@ -30,13 +30,20 @@ class PrimeMultiplicationTable{
       }
       num++
     }
+    let time2 = new Date().getTime()
     return primeNumbers
   }
 
   isNumberPrime(number, priorPrimeNumbers){
-    if(number === 2 || number === 3) return true
+    if(number === 2 ||
+      number === 3 ||
+      number === 5) return true
 
-    let index = 0
+    if(number % 2 === 0 ||
+      number % 3 === 0 ||
+      number % 5 === 0) return false
+
+    let index = 3
     const smallestValueToCheck = Math.sqrt(number)
     while(priorPrimeNumbers[index] <= smallestValueToCheck){
       if(number % priorPrimeNumbers[index++] === 0) return false
