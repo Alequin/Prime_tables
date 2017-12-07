@@ -19,7 +19,7 @@ describe("Table component", function(){
   });
 
   it("can generate table", () => {
-    let table = new Table(2)
+    let table = new Table({primeNumberCount: 2})
     let expected = [
       [<Cell value={" "}/>, <Cell value={2}/>, <Cell value={3}/>],
       [<Cell value={2}/>, <Cell value={4}/>, <Cell value={6}/>],
