@@ -5,12 +5,17 @@ class MainPage extends React.Component{
 
   constructor(props){
     super(props)
+    this.onClickGenerateButton = this.onClickGenerateButton.bind(this)
+  }
+
+  onClickGenerateButton(inputText){
+    console.log(inputText);
   }
 
   render(){
     return (
       <div>
-        <Nav />
+        <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
           This is the main section
         </section>
