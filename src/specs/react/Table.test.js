@@ -14,13 +14,13 @@ describe("Table component", function(){
 
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Table primeNumberCount={5}/>)
+      .create(<Table tableBuilder={new PrimeMultiplicationTable(2)}/>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it("can generate row", () => {
-    let table = new Table({primeNumberCount: 2})
+    let table = new Table()
     let primeTable = new PrimeMultiplicationTable(2)
 
     let expected = (
@@ -35,7 +35,8 @@ describe("Table component", function(){
   })
 
   it("can generate table", () => {
-    let table = new Table({primeNumberCount: 2})
+  let primeTable = new PrimeMultiplicationTable(2)
+    let table = new Table({tableBuilder: primeTable})
     let expected = [
       <div key={0} className="row">
         <Cell key={"_"} value={"_"}/>

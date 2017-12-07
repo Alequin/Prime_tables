@@ -2,31 +2,27 @@ import React from "react"
 import PropTypes from 'prop-types'
 import Cell from "./cell/Cell.jsx"
 
-import PrimeMultiplicationTable from "./../../PrimeMultiplicationTable.js"
-
 class Table extends React.Component{
 
   constructor(props){
     super(props)
   }
 
-  buildRow(primeTable, rowIndex){
+  buildRow(tableBuilder, rowIndex){
     const row = []
-    const length = primeTable.primeNumbers.length+1
+    const length = tableBuilder.maxPosition
+
     for(let column=0; column<length; column++){
-      const cellValue = primeTable.valueAt(rowIndex, column)
+      const cellValue = tableBuilder.valueAt(rowIndex, column)
       row.push(<Cell key={cellValue} value={cellValue}/>)
     }
     return <div key={rowIndex} className="row">{row}</div>
   }
 
   buildTable(){
-    const primeTable = new PrimeMultiplicationTable(this.props.primeNumberCount)
-    const length = this.props.primeNumberCount+1
     const table = []
-
-    for(let row=0; row<length; row++){
-      table.push(this.buildRow(primeTable, row))
+    for(let row=0; row<this.props.tableBuilder.maxPosition; row++){
+      table.push(this.buildRow(this.props.tableBuilder, row))
     }
     return table
   }
