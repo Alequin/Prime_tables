@@ -14,10 +14,10 @@ class MainPage extends React.Component{
 
   render(){
     return (
-      <div>
+      <div className="main-page">
         <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
-          This is the main section
+
         </section>
       </div>
     )
