@@ -11,6 +11,7 @@ class PrimeMultiplicationTable{
   }
 
   generatePrimeNumbers(amount){
+    if(amount % 1 !== 0) throw new Error(`Amount must be a whole number. Currently: ${amount}`)
     if(amount <= 0) return []
 
     let primeNumbers = [2]
