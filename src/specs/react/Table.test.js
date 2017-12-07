@@ -22,7 +22,7 @@ describe("Table component", function(){
     let table = new Table({primeNumberCount: 2})
     let expected = [
       <div key={0} className="row">
-        <Cell key={" "} value={" "}/>
+        <Cell key={"_"} value={"_"}/>
         <Cell key={2} value={2}/>
         <Cell key={3} value={3}/>
       </div>,

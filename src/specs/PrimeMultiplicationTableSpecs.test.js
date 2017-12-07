@@ -33,7 +33,7 @@ describe("test", function(){
   })
 
   it("can get value at position (0,0) on table", () => {
-    let expected = " "
+    let expected = "_"
     let result = primeTable.valueAt(0,0)
     assert.strictEqual(result, expected)
   })
