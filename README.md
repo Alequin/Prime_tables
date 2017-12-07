@@ -4,15 +4,21 @@
 ##How to run
 
 1. Install all dependencies using **npm install** or **yarn** in the terminal.
+2. Run webpack using the command **npm run build** to create the bundle
+3. Open the web page in your default browser with **npm start**
 
-#Aliases
+##How to use
+* At the top of the screen an input box is provided. Enter the Amount of prime numbers you wish to generate and press enter or click the generate.
 
-To activate a few aliases for commonly run terminal commands enter the source project_aliases.txt
+* The current table will be replaced with a new product table using value provided in the input box.
+
+##Aliases
+
+To activate a few aliases for commonly run terminal commands run **source project_aliases.txt** in the terminal. This will only work in the terminal they are activate in.
 
 This will activate the aliases:
-* run: Open app in default browser
+* open: Open app in default browser
 * tst: Run all tests
 * tst-u: Run all tests and update snapshots
 * bld: run webpack to build bundle
-
-All project aliases can be removed using the command **clear-project-aliases**
+* clear-project-aliases: remove these aliases
