@@ -21,23 +21,23 @@ describe("Table component", function(){
   it("can generate table", () => {
     let table = new Table({primeNumberCount: 2})
     let expected = [
-        <div className="Row">
-          <Cell value={" "}/>
-          <Cell value={2}/>
-          <Cell value={3}/>
-        </div>,
+      <div className="row">
+        <Cell key={" "} value={" "}/>
+        <Cell key={2} value={2}/>
+        <Cell key={3} value={3}/>
+      </div>,
 
-        <div className="Row">
-          <Cell value={2}/>
-          <Cell value={4}/>
-          <Cell value={6}/>
-        </div>,
-        
-        <div className="Row">
-          <Cell value={3}/>
-          <Cell value={6}/>
-          <Cell value={9}/>
-        </div>
+      <div className="row">
+        <Cell key={2} value={2}/>
+        <Cell key={4} value={4}/>
+        <Cell key={6} value={6}/>
+      </div>,
+
+      <div className="row">
+        <Cell key={3} value={3}/>
+        <Cell key={6} value={6}/>
+        <Cell key={9} value={9}/>
+      </div>
     ]
     let result = table.buildTable()
     assert.deepEqual(result, expected)
