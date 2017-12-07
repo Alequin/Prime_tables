@@ -61,7 +61,13 @@ describe("test", function(){
 
     let result = primeTable.infoAt(0,1)
     assert.strictEqual(result, expected)
-    result = primeTable.infoAt(1,2)
+    result = primeTable.infoAt(1,0)
+    assert.strictEqual(result, expected)
+  })
+
+  it("can get info at position (0,0)", () => {
+    let expected = "This is not a number"
+    let result = primeTable.infoAt(0,0)
     assert.strictEqual(result, expected)
   })
 })
