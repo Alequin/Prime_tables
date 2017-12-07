@@ -9,9 +9,16 @@ class Table extends React.Component{
     this.maxRows = 18
     this.maxColumns = 22
     this.setEventListeners()
+
+    this.onChangeXMoveInput = this.onChangeXMoveInput.bind(this)
+    this.onChangeYMoveInput = this.onChangeYMoveInput.bind(this)
+    this.onClickMove = this.onClickMove.bind(this)
+
     this.state = {
       row: 0,
-      column: 0
+      column: 0,
+      rowInput: 0,
+      columnInput: 0,
     }
   }
 
@@ -82,9 +89,39 @@ class Table extends React.Component{
     return table
   }
 
+  onChangeXMoveInput(event){
+    this.setState({
+      rowInput: parseInt(event.target.value)
+    })
+  }
+
+  onChangeYMoveInput(event){
+    this.setState({
+      columnInput: parseInt(event.target.value)
+    })
+  }
+
+  onClickMove(){
+    this.setState({
+      row: this.state.rowInput,
+      column: this.state.columnInput
+    })
+  }
+
+  renderInstantMovementControls(){
+    return (
+      <div>
+        <label>Row<input type="number" value={this.state.xInput} onChange={this.onChangeXMoveInput}/></label>
+        <label>Column<input type="number" value={this.state.yInput} onChange={this.onChangeYMoveInput}/></label>
+        <input type="submit" value="Jump to position" onClick={this.onClickMove}/>
+      </div>
+    )
+  }
+
   render(){
     return (
       <section className="table-container">
+        {this.renderInstantMovementControls()}
         {this.buildTable()}
       </section>
     )
