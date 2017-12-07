@@ -13,13 +13,13 @@ export const generatePrimeNumbers = (amount) => {
   return primeNumbers
 }
 
-export const isNumberPrime = (number, primeNumbers) => {
+export const isNumberPrime = (number, priorPrimeNumbers) => {
   if(number === 2 || number === 3) return true
 
   let index = 0
   const smallestValueToCheck = Math.sqrt(number)
-  while(primeNumbers[index] <= smallestValueToCheck){
-    if(number % primeNumbers[index++] === 0) return false
+  while(priorPrimeNumbers[index] <= smallestValueToCheck){
+    if(number % priorPrimeNumbers[index++] === 0) return false
   }
   return true
 }
