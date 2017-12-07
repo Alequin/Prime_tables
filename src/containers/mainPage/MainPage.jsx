@@ -1,6 +1,6 @@
 import React from "react"
-import Nav from "./../nav"
-import Table from "./../../components/table"
+import Nav from "./../nav/Nav.jsx"
+import Table from "./../../components/table/Table.jsx"
 
 class MainPage extends React.Component{
 

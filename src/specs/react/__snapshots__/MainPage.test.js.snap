@@ -17,6 +17,7 @@ exports[`renders correctly 1`] = `
         <input
           className="input"
           onChange={[Function]}
+          step=".01"
           type="number"
           value="3"
         />

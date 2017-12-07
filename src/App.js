@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import MainPage from "./containers/mainPage"
+import MainPage from "./containers/mainPage/MainPage.jsx"
 
 import css from "./ImportAllScss.js"
 
