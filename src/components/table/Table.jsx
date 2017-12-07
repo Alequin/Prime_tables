@@ -16,12 +16,11 @@ class Table extends React.Component{
     const table = []
     for(let row=0; row<length; row++){
       const currentRow = []
-      table.push(currentRow)
       for(let column=0; column<length; column++){
-        currentRow.push(
-          <Cell value={this.primeTable.valueAt(row, column)}/>
-        )
+        const cellValue = this.primeTable.valueAt(row, column)
+        currentRow.push(<Cell key={cellValue} value={cellValue}/>)
       }
+      table.push(<div className="row">{currentRow}</div>)
     }
     return table
   }
