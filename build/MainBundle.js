@@ -19914,16 +19914,72 @@ var Table = function (_React$Component) {
   function Table(props) {
     _classCallCheck(this, Table);
 
-    return _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
+
+    _this.maxRows = 18;
+    _this.maxColumns = 22;
+    _this.setEventListeners();
+    _this.state = {
+      x: 0,
+      y: 0
+    };
+    return _this;
   }
 
   _createClass(Table, [{
+    key: "setEventListeners",
+    value: function setEventListeners() {
+      var _this2 = this;
+
+      document.addEventListener("keydown", function (event) {
+        switch (event.key) {
+          case "ArrowUp":
+            _this2.onPressUp();
+            break;
+          case "ArrowDown":
+            _this2.onPressDown();
+            break;
+          case "ArrowLeft":
+            _this2.onPressLeft();
+            break;
+          case "ArrowRight":
+            _this2.onPressRight();
+            break;
+        }
+      });
+    }
+  }, {
+    key: "onPressUp",
+    value: function onPressUp() {
+      if (this.state.x > 0) {
+        this.setState({ x: this.state.x - 1 });
+      }
+    }
+  }, {
+    key: "onPressDown",
+    value: function onPressDown() {
+      this.setState({ x: this.state.x + 1 });
+    }
+  }, {
+    key: "onPressLeft",
+    value: function onPressLeft() {
+      if (this.state.y > 0) {
+        this.setState({ y: this.state.y - 1 });
+      }
+    }
+  }, {
+    key: "onPressRight",
+    value: function onPressRight() {
+      this.setState({ y: this.state.y + 1 });
+    }
+  }, {
     key: "buildRow",
     value: function buildRow(tableBuilder, rowIndex) {
       var row = [];
-      var length = tableBuilder.maxPosition;
+      var length = tableBuilder.maxPosition + this.state.y;
+      if (length > this.maxColumns) length = this.maxColumns + this.state.y;
 
-      for (var column = 0; column < length; column++) {
+      for (var column = this.state.y; column < length; column++) {
         var cellValue = tableBuilder.valueAt(rowIndex, column);
         var info = tableBuilder.infoAt(rowIndex, column);
         row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info }));
@@ -19938,7 +19994,9 @@ var Table = function (_React$Component) {
     key: "buildTable",
     value: function buildTable() {
       var table = [];
-      for (var row = 0; row < this.props.tableBuilder.maxPosition; row++) {
+      var length = this.props.tableBuilder.maxPosition + this.state.x;
+      if (length > this.maxRows) length = this.maxRows + this.state.x;
+      for (var row = this.state.x; row < length; row++) {
         table.push(this.buildRow(this.props.tableBuilder, row));
       }
       return table;

@@ -44,6 +44,12 @@ describe("test", function(){
     assert.strictEqual(result, expected)
   })
 
+  it("accessing an empty position will return the char _", () => {
+    let expected = "_"
+    let result = primeTable.valueAt(6,6)
+    assert.strictEqual(result, expected)
+  })
+
   it("cannnot provide a decimal number as an argument", () => {
     assert.throws(() => {
       new PrimeMultiplicationTable(1.5)
