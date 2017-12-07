@@ -19925,7 +19925,8 @@ var Table = function (_React$Component) {
 
       for (var column = 0; column < length; column++) {
         var cellValue = tableBuilder.valueAt(rowIndex, column);
-        row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue }));
+        var info = tableBuilder.infoAt(rowIndex, column);
+        row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info }));
       }
       return _react2.default.createElement(
         "div",
@@ -20095,6 +20096,14 @@ var PrimeMultiplicationTable = function () {
       if (x === 0) return this.primeNumbers[y - 1];
       if (y === 0) return this.primeNumbers[x - 1];
       return this.primeNumbers[x - 1] * this.primeNumbers[y - 1];
+    }
+  }, {
+    key: "infoAt",
+    value: function infoAt(x, y) {
+      if (x === 0 && y === 0) return "This is not a number";
+      if (x === 0) return "This is the prime number " + this.primeNumbers[y - 1];
+      if (y === 0) return "This is the prime number " + this.primeNumbers[x - 1];
+      return "This is the product of " + this.primeNumbers[x - 1] + " x " + this.primeNumbers[y - 1];
     }
   }, {
     key: "generatePrimeNumbers",
