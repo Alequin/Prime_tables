@@ -6,11 +6,14 @@ class Table extends React.Component{
 
   constructor(props){
     super(props)
+    this.maxRows = 18
+    this.maxColumns = 22
   }
 
   buildRow(tableBuilder, rowIndex){
     const row = []
-    const length = tableBuilder.maxPosition
+    let length = this.props.tableBuilder.maxPosition
+    if(length > this.maxColumns) length = this.maxColumns
 
     for(let column=0; column<length; column++){
       const cellValue = tableBuilder.valueAt(rowIndex, column)
@@ -22,7 +25,9 @@ class Table extends React.Component{
 
   buildTable(){
     const table = []
-    for(let row=0; row<this.props.tableBuilder.maxPosition; row++){
+    let length = this.props.tableBuilder.maxPosition
+    if(length > this.maxRows) length = this.maxRows
+    for(let row=0; row<length; row++){
       table.push(this.buildRow(this.props.tableBuilder, row))
     }
     return table
