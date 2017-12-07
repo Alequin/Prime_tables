@@ -17,6 +17,7 @@ class Nav extends React.Component{
   }
 
   handleButtonClick(event){
+    event.preventDefault()
     if( !(/\./.test(this.state.inputText)) ){
       this.inputBox.style.borderColor = ""
       this.props.onClickButton(this.state.inputText)
@@ -34,26 +35,28 @@ class Nav extends React.Component{
   render(){
     return (
       <nav className="nav-bar">
-        <label>
-          <h2>Enter how many prime numbers you wish to generate</h2>
+        <form>
+          <label>
+            <h2>Enter how many prime numbers you wish to generate</h2>
+            <div className="align-center-container">
+              <input
+                className="input"
+                type="number"
+                step=".01"
+                value={this.state.inputText}
+                onChange={this.onChangeInputBox}
+              />
+            </div>
+          </label>
           <div className="align-center-container">
             <input
-              className="input"
-              type="number"
-              step=".01"
-              value={this.state.inputText}
-              onChange={this.onChangeInputBox}
+              className="button"
+              type="submit"
+              value="Generate prime number multiplication table"
+              onClick={this.handleButtonClick}
             />
           </div>
-        </label>
-        <div className="align-center-container">
-          <input
-            className="button"
-            type="submit"
-            value="Generate prime number multiplication table"
-            onClick={this.handleButtonClick}
-          />
-        </div>
+        </form>
       </nav>
     )
   }
