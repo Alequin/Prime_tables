@@ -12,8 +12,17 @@ class Nav extends React.Component{
     }
   }
 
-  handleButtonClick(){
-    this.props.onClickButton(this.state.inputText)
+  componentDidMount(){
+    this.inputBox = document.querySelector(".input")
+  }
+
+  handleButtonClick(event){
+    if( !(/\./.test(this.state.inputText)) ){
+      this.inputBox.style.borderColor = ""
+      this.props.onClickButton(this.state.inputText)
+    }else{
+      this.inputBox.style.borderColor = "red"
+    }
   }
 
   onChangeInputBox(event){
@@ -31,6 +40,7 @@ class Nav extends React.Component{
             <input
               className="input"
               type="number"
+              step=".01"
               value={this.state.inputText}
               onChange={this.onChangeInputBox}
             />
