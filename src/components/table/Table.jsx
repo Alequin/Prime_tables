@@ -26,12 +26,7 @@ class Table extends React.Component{
     const table = []
 
     for(let row=0; row<length; row++){
-      const currentRow = []
-      for(let column=0; column<length; column++){
-        const cellValue = primeTable.valueAt(row, column)
-        currentRow.push(<Cell key={cellValue} value={cellValue}/>)
-      }
-      table.push(<div key={row} className="row">{currentRow}</div>)
+      table.push(this.buildRow(primeTable, row))
     }
     return table
   }
