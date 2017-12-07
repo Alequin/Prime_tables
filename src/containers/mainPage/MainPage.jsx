@@ -9,13 +9,17 @@ class MainPage extends React.Component{
     super(props)
     this.onClickGenerateButton = this.onClickGenerateButton.bind(this)
     this.state = {
-      primeTable: new PrimeMultiplicationTable(3)
+      primeTable: this.newPrimeTableBuilder(3)
     }
+  }
+
+  newPrimeTableBuilder(primeNumberCount){
+    return new PrimeMultiplicationTable(primeNumberCount)
   }
 
   onClickGenerateButton(inputText){
     this.setState({
-      primeTable: new PrimeMultiplicationTable(parseInt(inputText))
+      primeTable: this.newPrimeTableBuilder(parseInt(inputText))
     })
   }
 
