@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="cell-container"
+  onClick={[Function]}
 >
   5
 </div>

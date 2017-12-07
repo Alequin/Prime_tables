@@ -19990,18 +19990,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Cell = function (_React$Component) {
   _inherits(Cell, _React$Component);
 
-  function Cell() {
+  function Cell(props) {
     _classCallCheck(this, Cell);
 
-    return _possibleConstructorReturn(this, (Cell.__proto__ || Object.getPrototypeOf(Cell)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Cell.__proto__ || Object.getPrototypeOf(Cell)).call(this, props));
+
+    _this.onClick = _this.onClick.bind(_this);
+    return _this;
   }
 
   _createClass(Cell, [{
+    key: "onClick",
+    value: function onClick() {
+      alert(this.props.info);
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "cell-container" },
+        { className: "cell-container", onClick: this.onClick },
         this.props.value
       );
     }

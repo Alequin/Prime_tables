@@ -9,16 +9,19 @@ exports[`Table component renders correctly 1`] = `
   >
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       _
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       2
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       3
     </div>
@@ -28,16 +31,19 @@ exports[`Table component renders correctly 1`] = `
   >
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       2
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       4
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       6
     </div>
@@ -47,16 +53,19 @@ exports[`Table component renders correctly 1`] = `
   >
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       3
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       6
     </div>
     <div
       className="cell-container"
+      onClick={[Function]}
     >
       9
     </div>
