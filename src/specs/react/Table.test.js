@@ -21,19 +21,19 @@ describe("Table component", function(){
   it("can generate table", () => {
     let table = new Table({primeNumberCount: 2})
     let expected = [
-      <div className="row">
+      <div key={0} className="row">
         <Cell key={" "} value={" "}/>
         <Cell key={2} value={2}/>
         <Cell key={3} value={3}/>
       </div>,
 
-      <div className="row">
+      <div key={1} className="row">
         <Cell key={2} value={2}/>
         <Cell key={4} value={4}/>
         <Cell key={6} value={6}/>
       </div>,
 
-      <div className="row">
+      <div key={2} className="row">
         <Cell key={3} value={3}/>
         <Cell key={6} value={6}/>
         <Cell key={9} value={9}/>

@@ -20,7 +20,7 @@ class Table extends React.Component{
         const cellValue = primeTable.valueAt(row, column)
         currentRow.push(<Cell key={cellValue} value={cellValue}/>)
       }
-      table.push(<div className="row">{currentRow}</div>)
+      table.push(<div key={row} className="row">{currentRow}</div>)
     }
     return table
   }
