@@ -19958,7 +19958,9 @@ var Table = function (_React$Component) {
   }, {
     key: "onPressDown",
     value: function onPressDown() {
-      this.setState({ x: this.state.x + 1 });
+      if (this.state.x + this.maxRows < this.props.tableBuilder.maxPosition) {
+        this.setState({ x: this.state.x + 1 });
+      }
     }
   }, {
     key: "onPressLeft",
@@ -19970,7 +19972,9 @@ var Table = function (_React$Component) {
   }, {
     key: "onPressRight",
     value: function onPressRight() {
-      this.setState({ y: this.state.y + 1 });
+      if (this.state.y + this.maxColumns < this.props.tableBuilder.maxPosition) {
+        this.setState({ y: this.state.y + 1 });
+      }
     }
   }, {
     key: "buildRow",
@@ -20153,7 +20157,8 @@ var PrimeMultiplicationTable = function () {
       if (x === 0 && y === 0) return "_";
       if (x === 0) return this.primeNumbers[y - 1];
       if (y === 0) return this.primeNumbers[x - 1];
-      return this.primeNumbers[x - 1] * this.primeNumbers[y - 1];
+      var result = this.primeNumbers[x - 1] * this.primeNumbers[y - 1];
+      return !result ? "_" : result;
     }
   }, {
     key: "infoAt",
@@ -20161,7 +20166,11 @@ var PrimeMultiplicationTable = function () {
       if (x === 0 && y === 0) return "This is not a number";
       if (x === 0) return "This is prime number " + y;
       if (y === 0) return "This is prime number " + x;
-      return "This is the product of " + this.primeNumbers[x - 1] + " x " + this.primeNumbers[y - 1];
+      if (this.primeNumbers[x - 1] && this.primeNumbers[y - 1]) {
+        return "This is the product of " + this.primeNumbers[x - 1] + " x " + this.primeNumbers[y - 1];
+      } else {
+        return "";
+      }
     }
   }, {
     key: "generatePrimeNumbers",
