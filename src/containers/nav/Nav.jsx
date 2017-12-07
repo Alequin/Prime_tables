@@ -51,6 +51,6 @@ class Nav extends React.Component{
 
 Nav.propTypes = {
   onClickButton: PropTypes.func,
-};
+}
 
 export default Nav

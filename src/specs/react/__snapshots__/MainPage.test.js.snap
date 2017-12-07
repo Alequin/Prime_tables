@@ -38,23 +38,7 @@ exports[`renders correctly 1`] = `
   >
     <section
       className="table-container"
-    >
-      <div
-        className="cell-container"
-      >
-        2
-      </div>
-      <div
-        className="cell-container"
-      >
-        4
-      </div>
-      <div
-        className="cell-container"
-      >
-        6
-      </div>
-    </section>
+    />
   </section>
 </div>
 `;
