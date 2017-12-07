@@ -26,8 +26,8 @@ describe("Table component", function(){
     let expected = (
       <div key={0} className="row">
         <Cell key={"_"} value={"_"} info={"This is not a number"}/>
-        <Cell key={2} value={2} info={"This is the prime number 2"}/>
-        <Cell key={3} value={3} info={"This is the prime number 3"}/>
+        <Cell key={2} value={2} info={"This is prime number 1"}/>
+        <Cell key={3} value={3} info={"This is prime number 2"}/>
       </div>
     )
     let result = table.buildRow(primeTable, 0)
@@ -40,18 +40,18 @@ describe("Table component", function(){
     let expected = [
       <div key={0} className="row">
         <Cell key={"_"} value={"_"} info={"This is not a number"}/>
-        <Cell key={2} value={2} info={"This is the prime number 2"}/>
-        <Cell key={3} value={3}  info={"This is the prime number 3"}/>
+        <Cell key={2} value={2} info={"This is prime number 1"}/>
+        <Cell key={3} value={3}  info={"This is prime number 2"}/>
       </div>,
 
       <div key={1} className="row">
-        <Cell key={2} value={2} info={"This is the prime number 2"}/>
+        <Cell key={2} value={2} info={"This is prime number 1"}/>
         <Cell key={4} value={4} info={"This is the product of 2 x 2"}/>
         <Cell key={6} value={6} info={"This is the product of 2 x 3"}/>
       </div>,
 
       <div key={2} className="row">
-        <Cell key={3} value={3} info={"This is the prime number 3"}/>
+        <Cell key={3} value={3} info={"This is prime number 2"}/>
         <Cell key={6} value={6} info={"This is the product of 3 x 2"}/>
         <Cell key={9} value={9} info={"This is the product of 3 x 3"}/>
       </div>

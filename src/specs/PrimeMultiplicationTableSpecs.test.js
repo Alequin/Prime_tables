@@ -57,7 +57,7 @@ describe("test", function(){
   })
 
   it("can get info at position (0,1) and (1,0)", () => {
-    let expected = "This is the prime number 2"
+    let expected = "This is prime number 1"
 
     let result = primeTable.infoAt(0,1)
     assert.strictEqual(result, expected)
