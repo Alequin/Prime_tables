@@ -7,10 +7,12 @@
 2. Run webpack using the command **npm run build** to create the bundle
 3. Open the web page in your default browser with **npm start**
 
-##How to use
-* At the top of the screen an input box is provided. Enter the Amount of prime numbers you wish to generate and press enter or click the generate.
+4. Tests may be run using **npm test**
 
-* The current table will be replaced with a new product table using value provided in the input box.
+##How to use
+* At the top of the screen an input box is provided. Enter the amount of prime numbers you wish to generate and press enter / click generate.
+
+* The current table will be replaced with a new product table using the value provided in the input box.
 
 ##Aliases
 
