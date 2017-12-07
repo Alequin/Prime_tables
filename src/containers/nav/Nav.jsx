@@ -8,7 +8,7 @@ class Nav extends React.Component{
     this.handleButtonClick = this.handleButtonClick.bind(this)
     this.onChangeInputBox = this.onChangeInputBox.bind(this)
     this.state = {
-      inputText: ""
+      inputText: "3"
     }
   }
 

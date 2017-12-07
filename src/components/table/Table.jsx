@@ -14,7 +14,7 @@ class Table extends React.Component{
     const primeTable = new PrimeMultiplicationTable(this.props.primeNumberCount)
     const length = this.props.primeNumberCount+1
     const table = []
-    
+
     for(let row=0; row<length; row++){
       const currentRow = []
       for(let column=0; column<length; column++){

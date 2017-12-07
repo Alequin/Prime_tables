@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
         className="input"
         onChange={[Function]}
         type="number"
-        value=""
+        value="3"
       />
     </div>
   </label>

@@ -1,20 +1,4 @@
 
-export const generatePrimeMultiplicationTable = (amount) => {
-  const primeNumbers = [1, ...generatePrimeNumbers(amount)]
-  amount++
-
-  const table = [primeNumbers]
-  for(let row=1; row<amount; row++){
-    const currentRow = []
-    table.push(currentRow)
-    for(let column=0; column<amount; column++){
-      currentRow.push(primeNumbers[row] * primeNumbers[column])
-    }
-  }
-  table[0][0] = " "
-  return table
-}
-
 export const generatePrimeNumbers = (amount) => {
   if(amount <= 0) return []
 
