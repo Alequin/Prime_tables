@@ -24,7 +24,6 @@ class Nav extends React.Component{
 
   render(){
     return (
-      <div>
       <nav className="nav-bar">
         <label>
           <h2>Enter how many prime numbers you wish to generate</h2>
@@ -46,8 +45,6 @@ class Nav extends React.Component{
           />
         </div>
       </nav>
-      <div className="nav-spacer"></div>
-    </div>
     )
   }
 }
