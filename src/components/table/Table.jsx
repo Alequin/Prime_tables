@@ -6,8 +6,8 @@ class Table extends React.Component{
 
   constructor(props){
     super(props)
-    this.maxRows = 18
-    this.maxColumns = 22
+    this.maxRows = 10
+    this.maxColumns = 10
     this.setEventListeners()
 
     this.onChangeXMoveInput = this.onChangeXMoveInput.bind(this)
@@ -66,6 +66,26 @@ class Table extends React.Component{
     }
   }
 
+
+  onChangeXMoveInput(event){
+    this.setState({
+      rowInput: parseInt(event.target.value)
+    })
+  }
+
+  onChangeYMoveInput(event){
+    this.setState({
+      columnInput: parseInt(event.target.value)
+    })
+  }
+
+  onClickMove(){
+    this.setState({
+      row: this.state.rowInput,
+      column: this.state.columnInput
+    })
+  }
+
   buildRow(tableBuilder, rowIndex){
     const row = []
     let length = tableBuilder.maxPosition+this.state.column
@@ -87,25 +107,6 @@ class Table extends React.Component{
       table.push(this.buildRow(this.props.tableBuilder, row))
     }
     return table
-  }
-
-  onChangeXMoveInput(event){
-    this.setState({
-      rowInput: parseInt(event.target.value)
-    })
-  }
-
-  onChangeYMoveInput(event){
-    this.setState({
-      columnInput: parseInt(event.target.value)
-    })
-  }
-
-  onClickMove(){
-    this.setState({
-      row: this.state.rowInput,
-      column: this.state.columnInput
-    })
   }
 
   renderInstantMovementControls(){
