@@ -41,7 +41,9 @@ class Table extends React.Component{
   }
 
   onPressDown(){
-    this.setState({x: this.state.x+1})
+    if(this.state.x+this.maxRows < this.props.tableBuilder.maxPosition){
+      this.setState({x: this.state.x+1})
+    }
   }
 
   onPressLeft(){
@@ -51,7 +53,9 @@ class Table extends React.Component{
   }
 
   onPressRight(){
-    this.setState({y: this.state.y+1})
+    if(this.state.y+this.maxColumns < this.props.tableBuilder.maxPosition){
+      this.setState({y: this.state.y+1})
+    }
   }
 
   buildRow(tableBuilder, rowIndex){

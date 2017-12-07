@@ -16,7 +16,11 @@ class PrimeMultiplicationTable{
     if(x === 0 && y === 0) return `This is not a number`
     if(x === 0) return `This is prime number ${y}`
     if(y === 0) return `This is prime number ${x}`
-    return `This is the product of ${this.primeNumbers[x-1]} x ${this.primeNumbers[y-1]}`
+    if(this.primeNumbers[x-1] && this.primeNumbers[y-1]){
+      return `This is the product of ${this.primeNumbers[x-1]} x ${this.primeNumbers[y-1]}`
+    }else{
+      return ""
+    }
   }
 
   generatePrimeNumbers(amount){
