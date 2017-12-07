@@ -11,6 +11,10 @@ class PrimeMultiplicationTable{
     return this.primeNumbers[x-1] * this.primeNumbers[y-1]
   }
 
+  infoAt(x,y){
+    return `This is the product of ${this.primeNumbers[x-1]} x ${this.primeNumbers[y-1]}`
+  }
+
   generatePrimeNumbers(amount){
     if(amount % 1 !== 0) throw new Error(`Amount must be a whole number. Currently: ${amount}`)
     if(amount <= 0) return []
