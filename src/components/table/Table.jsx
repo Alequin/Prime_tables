@@ -14,7 +14,8 @@ class Table extends React.Component{
 
     for(let column=0; column<length; column++){
       const cellValue = tableBuilder.valueAt(rowIndex, column)
-      row.push(<Cell key={cellValue} value={cellValue}/>)
+      const info = tableBuilder.infoAt(rowIndex, column)
+      row.push(<Cell key={cellValue} value={cellValue} info={info}/>)
     }
     return <div key={rowIndex} className="row">{row}</div>
   }
