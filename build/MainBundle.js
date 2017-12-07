@@ -20108,7 +20108,6 @@ var PrimeMultiplicationTable = function () {
   }, {
     key: "generatePrimeNumbers",
     value: function generatePrimeNumbers(amount) {
-      var time1 = new Date().getTime();
       if (amount % 1 !== 0) throw new Error("Amount must be a whole number. Currently: " + amount);
       if (amount <= 0) return [];
 
@@ -20120,8 +20119,6 @@ var PrimeMultiplicationTable = function () {
         }
         num++;
       }
-      var time2 = new Date().getTime();
-      console.log(time2 - time1);
       return primeNumbers;
     }
   }, {

@@ -30,7 +30,6 @@ class PrimeMultiplicationTable{
       }
       num++
     }
-    let time2 = new Date().getTime()
     return primeNumbers
   }
 
