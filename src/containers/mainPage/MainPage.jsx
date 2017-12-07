@@ -11,6 +11,9 @@ class MainPage extends React.Component{
     return (
       <div>
         <Nav />
+        <section className="content-container">
+          This is the main section
+        </section>
       </div>
     )
   }

@@ -1,8 +1,16 @@
+$nav-height: 145px;
+
+.nav-spacer{
+  height: $nav-height;
+}
+
 .nav-bar{
   position: fixed;
   background-color: #228B22;
   width: 100%;
   padding: 20px;
+  height: $nav-height;
+  box-sizing: border-box;
 
   h2{
     text-align: center;
