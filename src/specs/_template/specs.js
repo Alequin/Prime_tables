@@ -7,8 +7,7 @@
 //
 //   })
 //
-//   it("can initialise", () => {
-//     assert.strictEqual(1, 1)
+//   it("can", () => {
+//
 //   })
-// 
 // })
