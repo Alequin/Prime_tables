@@ -1,5 +1,6 @@
 import React from "react"
 import Nav from "./../nav"
+import Table from "./../../components/table"
 
 class MainPage extends React.Component{
 
@@ -17,7 +18,7 @@ class MainPage extends React.Component{
       <div className="main-page">
         <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
-
+          <Table/>
         </section>
       </div>
     )
