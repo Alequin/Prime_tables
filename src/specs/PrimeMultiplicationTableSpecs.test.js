@@ -43,6 +43,12 @@ describe("test", function(){
     let result = primeTable.valueAt(5,5)
     assert.strictEqual(result, expected)
   })
+
+  it("cannnot provide a decimal number as an argument", () => {
+    assert.throws(() => {
+      new PrimeMultiplicationTable(1.5)
+    })
+  })
 })
 
 describe(`isNumberPrime - checks if a number if prime using
