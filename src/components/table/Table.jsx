@@ -10,6 +10,16 @@ class Table extends React.Component{
     super(props)
   }
 
+  buildRow(primeTable, rowIndex){
+    const row = []
+    const length = primeTable.primeNumbers.length+1
+    for(let column=0; column<length; column++){
+      const cellValue = primeTable.valueAt(rowIndex, column)
+      row.push(<Cell key={cellValue} value={cellValue}/>)
+    }
+    return <div key={rowIndex} className="row">{row}</div>
+  }
+
   buildTable(){
     const primeTable = new PrimeMultiplicationTable(this.props.primeNumberCount)
     const length = this.props.primeNumberCount+1
