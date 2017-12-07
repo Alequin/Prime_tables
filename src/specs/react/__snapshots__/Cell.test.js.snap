@@ -3,5 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="cell-container"
-/>
+>
+  5
+</div>
 `;
