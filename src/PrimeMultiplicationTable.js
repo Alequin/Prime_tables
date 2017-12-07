@@ -1,6 +1,7 @@
 class PrimeMultiplicationTable{
   constructor(primeNumberCount){
     this.primeNumbers = this.generatePrimeNumbers(primeNumberCount)
+    this.maxPosition = this.primeNumbers.length+1
   }
 
   valueAt(x, y){
