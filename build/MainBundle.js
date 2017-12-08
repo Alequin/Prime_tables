@@ -1518,9 +1518,9 @@ var _Nav = __webpack_require__(22);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Table = __webpack_require__(49);
+var _ArrowTable = __webpack_require__(55);
 
-var _Table2 = _interopRequireDefault(_Table);
+var _ArrowTable2 = _interopRequireDefault(_ArrowTable);
 
 var _PrimeMultiplicationTable = __webpack_require__(53);
 
@@ -1571,7 +1571,7 @@ var MainPage = function (_React$Component) {
         _react2.default.createElement(
           "section",
           { className: "content-container" },
-          _react2.default.createElement(_Table2.default, { tableBuilder: this.state.primeTable })
+          _react2.default.createElement(_ArrowTable2.default, { tableBuilder: this.state.primeTable })
         )
       );
     }
@@ -19791,7 +19791,7 @@ exports = module.exports = __webpack_require__(9)(undefined);
 
 
 // module
-exports.push([module.i, ".main-page {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .main-page .content-container {\n    overflow: hidden;\n    flex: 1;\n    margin: 20px; }\n", ""]);
+exports.push([module.i, ".main-page {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .main-page .content-container {\n    overflow: auto;\n    flex: 1;\n    margin: 20px; }\n", ""]);
 
 // exports
 
@@ -19916,97 +19916,14 @@ var Table = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
 
-    _this.maxRows = 10;
-    _this.maxColumns = 10;
-    _this.setEventListeners();
-
-    _this.onChangeXMoveInput = _this.onChangeXMoveInput.bind(_this);
-    _this.onChangeYMoveInput = _this.onChangeYMoveInput.bind(_this);
-    _this.onClickMove = _this.onClickMove.bind(_this);
-
     _this.state = {
       row: 0,
-      column: 0,
-      rowInput: 0,
-      columnInput: 0
+      column: 0
     };
     return _this;
   }
 
   _createClass(Table, [{
-    key: "setEventListeners",
-    value: function setEventListeners() {
-      var _this2 = this;
-
-      document.addEventListener("keydown", function (event) {
-        var key = event.key;
-        switch (event.key) {
-          case "ArrowUp":
-            _this2.onPressUp();
-            break;
-          case "ArrowDown":
-            _this2.onPressDown();
-            break;
-          case "ArrowLeft":
-            _this2.onPressLeft();
-            break;
-          case "ArrowRight":
-            _this2.onPressRight();
-            break;
-        }
-      });
-    }
-  }, {
-    key: "onPressUp",
-    value: function onPressUp() {
-      if (this.state.row > 0) {
-        this.setState({ row: this.state.row - 1 });
-      }
-    }
-  }, {
-    key: "onPressDown",
-    value: function onPressDown() {
-      if (this.state.row + this.maxRows < this.props.tableBuilder.maxPosition) {
-        this.setState({ row: this.state.row + 1 });
-      }
-    }
-  }, {
-    key: "onPressLeft",
-    value: function onPressLeft() {
-      if (this.state.column > 0) {
-        this.setState({ column: this.state.column - 1 });
-      }
-    }
-  }, {
-    key: "onPressRight",
-    value: function onPressRight() {
-      if (this.state.column + this.maxColumns < this.props.tableBuilder.maxPosition) {
-        this.setState({ column: this.state.column + 1 });
-      }
-    }
-  }, {
-    key: "onChangeXMoveInput",
-    value: function onChangeXMoveInput(event) {
-      this.setState({
-        rowInput: parseInt(event.target.value)
-      });
-    }
-  }, {
-    key: "onChangeYMoveInput",
-    value: function onChangeYMoveInput(event) {
-      this.setState({
-        columnInput: parseInt(event.target.value)
-      });
-    }
-  }, {
-    key: "onClickMove",
-    value: function onClickMove() {
-      this.setState({
-        row: this.state.rowInput,
-        column: this.state.columnInput
-      });
-    }
-  }, {
     key: "buildRow",
     value: function buildRow(tableBuilder, rowIndex) {
       var row = [];
@@ -20036,33 +19953,11 @@ var Table = function (_React$Component) {
       return table;
     }
   }, {
-    key: "renderInstantMovementControls",
-    value: function renderInstantMovementControls() {
-      return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-          "label",
-          null,
-          "Row",
-          _react2.default.createElement("input", { type: "number", value: this.state.xInput, onChange: this.onChangeXMoveInput })
-        ),
-        _react2.default.createElement(
-          "label",
-          null,
-          "Column",
-          _react2.default.createElement("input", { type: "number", value: this.state.yInput, onChange: this.onChangeYMoveInput })
-        ),
-        _react2.default.createElement("input", { type: "submit", value: "Jump to position", onClick: this.onClickMove })
-      );
-    }
-  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "section",
         { className: "table-container" },
-        this.renderInstantMovementControls(),
         this.buildTable()
       );
     }
@@ -20260,6 +20155,203 @@ var PrimeMultiplicationTable = function () {
 }();
 
 exports.default = PrimeMultiplicationTable;
+
+/***/ }),
+/* 54 */,
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Table2 = __webpack_require__(49);
+
+var _Table3 = _interopRequireDefault(_Table2);
+
+var _Cell = __webpack_require__(50);
+
+var _Cell2 = _interopRequireDefault(_Cell);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArrowTable = function (_Table) {
+  _inherits(ArrowTable, _Table);
+
+  function ArrowTable(props) {
+    _classCallCheck(this, ArrowTable);
+
+    var _this = _possibleConstructorReturn(this, (ArrowTable.__proto__ || Object.getPrototypeOf(ArrowTable)).call(this, props));
+
+    _this.maxRows = 10;
+    _this.maxColumns = 10;
+    _this.setEventListeners();
+
+    _this.onChangeXMoveInput = _this.onChangeXMoveInput.bind(_this);
+    _this.onChangeYMoveInput = _this.onChangeYMoveInput.bind(_this);
+    _this.onClickMove = _this.onClickMove.bind(_this);
+
+    _this.state = Object.assign(_this.state, {
+      rowInput: 0,
+      columnInput: 0
+    });
+    return _this;
+  }
+
+  _createClass(ArrowTable, [{
+    key: "setEventListeners",
+    value: function setEventListeners() {
+      var _this2 = this;
+
+      document.addEventListener("keydown", function (event) {
+        var key = event.key;
+        switch (key) {
+          case "ArrowUp":
+            _this2.onPressUp();
+            break;
+          case "ArrowDown":
+            _this2.onPressDown();
+            break;
+          case "ArrowLeft":
+            _this2.onPressLeft();
+            break;
+          case "ArrowRight":
+            _this2.onPressRight();
+            break;
+        }
+      });
+    }
+  }, {
+    key: "onPressUp",
+    value: function onPressUp() {
+      if (this.state.row > 0) {
+        this.setState({ row: this.state.row - 1 });
+      }
+    }
+  }, {
+    key: "onPressDown",
+    value: function onPressDown() {
+      if (this.state.row + this.maxRows < this.props.tableBuilder.maxPosition) {
+        this.setState({ row: this.state.row + 1 });
+      }
+    }
+  }, {
+    key: "onPressLeft",
+    value: function onPressLeft() {
+      if (this.state.column > 0) {
+        this.setState({ column: this.state.column - 1 });
+      }
+    }
+  }, {
+    key: "onPressRight",
+    value: function onPressRight() {
+      if (this.state.column + this.maxColumns < this.props.tableBuilder.maxPosition) {
+        this.setState({ column: this.state.column + 1 });
+      }
+    }
+  }, {
+    key: "onChangeXMoveInput",
+    value: function onChangeXMoveInput(event) {
+      this.setState({
+        rowInput: parseInt(event.target.value)
+      });
+    }
+  }, {
+    key: "onChangeYMoveInput",
+    value: function onChangeYMoveInput(event) {
+      this.setState({
+        columnInput: parseInt(event.target.value)
+      });
+    }
+  }, {
+    key: "onClickMove",
+    value: function onClickMove() {
+      this.setState({
+        row: this.state.rowInput,
+        column: this.state.columnInput
+      });
+    }
+  }, {
+    key: "renderInstantMovementControls",
+    value: function renderInstantMovementControls() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "label",
+          null,
+          "Row",
+          _react2.default.createElement("input", { type: "number", value: this.state.rowInput, onChange: this.onChangeXMoveInput })
+        ),
+        _react2.default.createElement(
+          "label",
+          null,
+          "Column",
+          _react2.default.createElement("input", { type: "number", value: this.state.columnInput, onChange: this.onChangeYMoveInput })
+        ),
+        _react2.default.createElement("input", { type: "submit", value: "Jump to position", onClick: this.onClickMove })
+      );
+    }
+  }, {
+    key: "buildRow",
+    value: function buildRow(tableBuilder, rowIndex) {
+      var row = [];
+      var length = tableBuilder.maxPosition + this.state.column;
+      if (length > this.maxColumns) length = this.maxColumns + this.state.column;
+
+      for (var column = this.state.column; column < length; column++) {
+        var cellValue = tableBuilder.valueAt(rowIndex, column);
+        var info = tableBuilder.infoAt(rowIndex, column);
+        row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info }));
+      }
+      return _react2.default.createElement(
+        "div",
+        { key: rowIndex, className: "row" },
+        row
+      );
+    }
+  }, {
+    key: "buildTable",
+    value: function buildTable() {
+      var table = [];
+      var length = this.props.tableBuilder.maxPosition + this.state.row;
+      if (length > this.maxRows) length = this.maxRows + this.state.row;
+      for (var row = this.state.row; row < length; row++) {
+        table.push(this.buildRow(this.props.tableBuilder, row));
+      }
+      return table;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "section",
+        { className: "table-container" },
+        this.renderInstantMovementControls(),
+        this.buildTable()
+      );
+    }
+  }]);
+
+  return ArrowTable;
+}(_Table3.default);
+
+exports.default = ArrowTable;
 
 /***/ })
 /******/ ]);

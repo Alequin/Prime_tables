@@ -4,29 +4,6 @@ exports[`Table component renders correctly 1`] = `
 <section
   className="table-container"
 >
-  <div>
-    <label>
-      Row
-      <input
-        onChange={[Function]}
-        type="number"
-        value={undefined}
-      />
-    </label>
-    <label>
-      Column
-      <input
-        onChange={[Function]}
-        type="number"
-        value={undefined}
-      />
-    </label>
-    <input
-      onClick={[Function]}
-      type="submit"
-      value="Jump to position"
-    />
-  </div>
   <div
     className="row"
   >

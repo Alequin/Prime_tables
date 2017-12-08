@@ -1,6 +1,6 @@
 import React from "react"
 import Nav from "./../nav/Nav.jsx"
-import Table from "./../../components/table/Table.jsx"
+import ArrowTable from "./../../components/table/ArrowTable.jsx"
 import PrimeMultiplicationTable from "./../../PrimeMultiplicationTable.js"
 
 class MainPage extends React.Component{
@@ -28,7 +28,7 @@ class MainPage extends React.Component{
       <div className="main-page">
         <Nav onClickButton={this.onClickGenerateButton}/>
         <section className="content-container">
-          <Table tableBuilder={this.state.primeTable}/>
+          <ArrowTable tableBuilder={this.state.primeTable}/>
         </section>
       </div>
     )
