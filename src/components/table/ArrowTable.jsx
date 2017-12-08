@@ -100,9 +100,7 @@ class ArrowTable extends Table{
     if(length > this.maxColumns) length = this.maxColumns+this.state.column
 
     for(let column=this.state.column; column<length; column++){
-      const cellValue = tableBuilder.valueAt(rowIndex, column)
-      const info = tableBuilder.infoAt(rowIndex, column)
-      row.push(<Cell key={cellValue} value={cellValue} info={info}/>)
+      row.push(this.buildCell(tableBuilder, rowIndex, column))
     }
     return <div key={rowIndex} className="row">{row}</div>
   }

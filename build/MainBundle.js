@@ -19927,13 +19927,9 @@ var Table = function (_React$Component) {
     key: "buildRow",
     value: function buildRow(tableBuilder, rowIndex) {
       var row = [];
-      var length = tableBuilder.maxPosition + this.state.column;
-      if (length > this.maxColumns) length = this.maxColumns + this.state.column;
-
-      for (var column = this.state.column; column < length; column++) {
-        var cellValue = tableBuilder.valueAt(rowIndex, column);
-        var info = tableBuilder.infoAt(rowIndex, column);
-        row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info }));
+      var length = tableBuilder.maxPosition;
+      for (var column = 0; column < length; column++) {
+        row.push(this.buildCell(tableBuilder, rowIndex, column));
       }
       return _react2.default.createElement(
         "div",
@@ -19942,12 +19938,18 @@ var Table = function (_React$Component) {
       );
     }
   }, {
+    key: "buildCell",
+    value: function buildCell(tableBuilder, row, column) {
+      var cellValue = tableBuilder.valueAt(row, column);
+      var info = tableBuilder.infoAt(row, column);
+      return _react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info });
+    }
+  }, {
     key: "buildTable",
     value: function buildTable() {
       var table = [];
-      var length = this.props.tableBuilder.maxPosition + this.state.row;
-      if (length > this.maxRows) length = this.maxRows + this.state.row;
-      for (var row = this.state.row; row < length; row++) {
+      var length = this.props.tableBuilder.maxPosition;
+      for (var row = 0; row < length; row++) {
         table.push(this.buildRow(this.props.tableBuilder, row));
       }
       return table;
@@ -20315,9 +20317,7 @@ var ArrowTable = function (_Table) {
       if (length > this.maxColumns) length = this.maxColumns + this.state.column;
 
       for (var column = this.state.column; column < length; column++) {
-        var cellValue = tableBuilder.valueAt(rowIndex, column);
-        var info = tableBuilder.infoAt(rowIndex, column);
-        row.push(_react2.default.createElement(_Cell2.default, { key: cellValue, value: cellValue, info: info }));
+        row.push(this.buildCell(tableBuilder, rowIndex, column));
       }
       return _react2.default.createElement(
         "div",

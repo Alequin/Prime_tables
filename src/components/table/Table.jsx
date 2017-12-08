@@ -14,22 +14,23 @@ class Table extends React.Component{
 
   buildRow(tableBuilder, rowIndex){
     const row = []
-    let length = tableBuilder.maxPosition+this.state.column
-    if(length > this.maxColumns) length = this.maxColumns+this.state.column
-
-    for(let column=this.state.column; column<length; column++){
-      const cellValue = tableBuilder.valueAt(rowIndex, column)
-      const info = tableBuilder.infoAt(rowIndex, column)
-      row.push(<Cell key={cellValue} value={cellValue} info={info}/>)
+    const length = tableBuilder.maxPosition
+    for(let column=0; column<length; column++){
+      row.push(this.buildCell(tableBuilder, rowIndex, column))
     }
     return <div key={rowIndex} className="row">{row}</div>
   }
 
+  buildCell(tableBuilder, row, column){
+    const cellValue = tableBuilder.valueAt(row, column)
+    const info = tableBuilder.infoAt(row, column)
+    return <Cell key={cellValue} value={cellValue} info={info}/>
+  }
+
   buildTable(){
     const table = []
-    let length = this.props.tableBuilder.maxPosition+this.state.row
-    if(length > this.maxRows) length = this.maxRows+this.state.row
-    for(let row=this.state.row; row<length; row++){
+    const length = this.props.tableBuilder.maxPosition
+    for(let row=0; row<length; row++){
       table.push(this.buildRow(this.props.tableBuilder, row))
     }
     return table
